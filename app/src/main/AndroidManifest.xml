@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.practice.practicamovil2">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".ui.view.MainApplication"
         android:allowBackup="true"
