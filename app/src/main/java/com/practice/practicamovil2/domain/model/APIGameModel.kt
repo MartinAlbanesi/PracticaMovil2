@@ -2,6 +2,6 @@ package com.practice.practicamovil2.domain.model
 
 import com.google.gson.annotations.SerializedName
 
-data class APIGameModel (@SerializedName("title") val nombre: String,
-                         @SerializedName("thumbnail") val imagen: String,
-                         @SerializedName("short_description") val descripcion: String)
+data class APIGameModel (@SerializedName("id") val nombre: String,
+                         @SerializedName("url") val imagen: String,
+                         @SerializedName("width") val descripcion: String)

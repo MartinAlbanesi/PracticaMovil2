@@ -1,5 +1,6 @@
 package com.practice.practicamovil2.injectDependencies
 
+import com.practice.practicamovil2.data.api.GameAPI
 import com.practice.practicamovil2.data.api.GameAPIProvider
 import com.practice.practicamovil2.data.api.GameAPIMainProvider
 import com.practice.practicamovil2.data.api.GameAPIRepository
@@ -12,7 +13,7 @@ import org.koin.dsl.module
 
 val remoteRepositoryModule = module {
     single<GameAPIProvider> { GameAPIMainProvider() }
-    single<GameRepository> { GameAPIRepository(get()) }
+    single<GameAPI> { GameAPIRepository(get()) }
 
     //ViewModel
     viewModel { MainViewModel (get()) }

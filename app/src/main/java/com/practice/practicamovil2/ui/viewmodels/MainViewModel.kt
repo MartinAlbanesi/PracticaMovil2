@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 import java.lang.Exception
 
 
-class MainViewModel(private val gameList: GameRepository): ViewModel()  {
+class MainViewModel(private val gameList: GameAPIRepository): ViewModel()  {
 
     var allGamesList = listOf<APIGameModel>()
     var errorMessage = MutableLiveData("Error")
@@ -18,7 +18,7 @@ class MainViewModel(private val gameList: GameRepository): ViewModel()  {
     suspend fun fill(){
         viewModelScope.launch {
             try{
-                val allGamesList = gameList.listGames()
+                allGamesList = gameList.getGames().body()!!
             }catch (e: Exception){
                 errorMessage.value = e.message
             }

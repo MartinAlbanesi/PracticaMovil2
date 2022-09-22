@@ -3,6 +3,7 @@ package com.practice.practicamovil2.ui.activities
 import android.os.Bundle
 import android.os.StrictMode
 import android.os.StrictMode.VmPolicy
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -14,9 +15,11 @@ import com.practice.practicamovil2.domain.model.APIGameModel
 import com.practice.practicamovil2.injectDependencies.remoteRepositoryModule
 import com.practice.practicamovil2.ui.adapters.GameAdapter
 import com.practice.practicamovil2.ui.viewmodels.MainViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.GlobalContext.loadKoinModules
+import org.w3c.dom.Text
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     private val vm: MainViewModel by viewModel()
     lateinit var lista: List<APIGameModel>
     //private lateinit var toast: Toast
+    lateinit var textView: TextView
 
 /*
     private val errorMessageObserver = Observer<String> { status ->
@@ -40,6 +44,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        textView = findViewById(R.id.textView)
+
+
+
         //vm.errorMessage.observe(this, errorMessageObserver)
 
 
@@ -47,6 +55,8 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch {
             vm.fill()
         }
+
+        textView.text = vm.allGamesList.toString()
 
         buildRecyclerView()
 
