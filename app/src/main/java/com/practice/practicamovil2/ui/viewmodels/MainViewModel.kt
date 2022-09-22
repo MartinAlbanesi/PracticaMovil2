@@ -18,7 +18,7 @@ class MainViewModel(private val gameList: GameRepository): ViewModel()  {
     suspend fun fill(){
         viewModelScope.launch {
             try{
-                val allGamesList = gameList.listGames()
+                allGamesList = gameList.listGames()
             }catch (e: Exception){
                 errorMessage.value = e.message
             }
