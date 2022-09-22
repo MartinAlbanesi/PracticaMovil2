@@ -11,7 +11,7 @@ class GameAPIMainProvider : GameAPIProvider {
 
     override fun getAPI(): GameAPI {
         val serviceGetGamesByAPI = Retrofit.Builder()
-            .baseUrl("https://api.github.com/")
+            .baseUrl("https://www.freetogame.com/api/")
             .addConverterFactory(GsonConverterFactory.create(Gson()))
             .build()
         return serviceGetGamesByAPI.create(GameAPI::class.java)

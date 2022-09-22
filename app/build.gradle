@@ -37,6 +37,7 @@ android {
 
 def koin_version= "3.2.1"
 
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.9.0'

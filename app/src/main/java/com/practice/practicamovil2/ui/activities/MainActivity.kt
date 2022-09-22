@@ -10,33 +10,40 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.practice.practicamovil2.R
+import com.practice.practicamovil2.injectDependencies.remoteRepositoryModule
 import com.practice.practicamovil2.ui.adapters.GameAdapter
 import com.practice.practicamovil2.ui.viewmodels.MainViewModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.context.GlobalContext.loadKoinModules
 
 
 class MainActivity : AppCompatActivity() {
 
+    //init { loadKoinModules(remoteRepositoryModule) }
+
     private lateinit var recycler: RecyclerView
     private lateinit var gameAdapter: GameAdapter
     private val vm: MainViewModel by viewModel()
-    private lateinit var toast: Toast
+    //private lateinit var toast: Toast
 
-
+/*
     private val errorMessageObserver = Observer<String> { status ->
         toast.setText(status)
         toast.show()
     }
-
+*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        vm.errorMessage.observe(this, errorMessageObserver)
+        //vm.errorMessage.observe(this, errorMessageObserver)
 
-        lifecycleScope.launch { vm.fill() }
+        lifecycleScope.launch {
+            vm.fill()
+        }
+
         buildRecyclerView()
 
     }

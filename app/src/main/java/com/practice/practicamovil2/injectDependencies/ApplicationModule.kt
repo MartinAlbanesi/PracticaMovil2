@@ -5,6 +5,7 @@ import com.practice.practicamovil2.data.api.GameAPIMainProvider
 import com.practice.practicamovil2.data.api.GameAPIRepository
 import com.practice.practicamovil2.data.repositories.GameFakeRepository
 import com.practice.practicamovil2.data.repositories.GameRepository
+import com.practice.practicamovil2.ui.activities.MainActivity
 import com.practice.practicamovil2.ui.viewmodels.MainViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -21,5 +22,5 @@ val localRepositoryModule = module {
     single<GameRepository> { GameFakeRepository() }
 
     //ViewModel
-    viewModel { MainViewModel (get()) }
+    //viewModel { MainViewModel (get()) }
 }

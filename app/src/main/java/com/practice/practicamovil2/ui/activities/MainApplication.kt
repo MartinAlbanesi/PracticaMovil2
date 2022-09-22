@@ -1,6 +1,7 @@
 package com.practice.practicamovil2.ui.activities
 
 import android.app.Application
+import com.practice.practicamovil2.injectDependencies.localRepositoryModule
 import com.practice.practicamovil2.injectDependencies.remoteRepositoryModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidFileProperties
@@ -14,7 +15,6 @@ class MainApplication: Application() {
         startKoin{
             androidLogger()
             androidContext(this@MainApplication)
-            androidFileProperties()
             modules(remoteRepositoryModule)
         }
     }
