@@ -1,4 +1,4 @@
-package com.practice.practicamovil2.domain.adapters
+package com.practice.practicamovil2.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.practice.practicamovil2.R
-import com.practice.practicamovil2.data.model.GameModel
+import com.practice.practicamovil2.domain.model.GameModel
 
 class GameAdapter(list: List<GameModel>): RecyclerView.Adapter<GameAdapter.ViewHolder>() {
 
