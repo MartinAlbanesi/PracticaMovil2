@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 
 interface GameAPI {
-    @GET("game")
+    @GET("games")
     suspend fun getGames(): Response<List<APIGameModel>>
 }

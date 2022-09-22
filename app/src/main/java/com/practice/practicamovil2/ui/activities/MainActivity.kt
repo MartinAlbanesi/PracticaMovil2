@@ -3,6 +3,7 @@ package com.practice.practicamovil2.ui.activities
 import android.os.Bundle
 import android.os.StrictMode
 import android.os.StrictMode.VmPolicy
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -45,7 +46,9 @@ class MainActivity : AppCompatActivity() {
 
 
         lifecycleScope.launch {
+            Log.d("MainActivity","Entró al launch del método fill()")
             vm.fill()
+            Log.d("MainActivity","Se ejecutó el launch del metodo fill()")
         }
 
         buildRecyclerView()
@@ -54,10 +57,12 @@ class MainActivity : AppCompatActivity() {
 
     //Settea las reparaciones a la lista repairs
     private fun buildRecyclerView(){
+        Log.d("MainActivity","Entró al método de build del recycler")
         recycler = findViewById(R.id.recyclerView)
         recycler.setHasFixedSize(true)
         recycler.layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL,false)
         gameAdapter= GameAdapter(vm.allGamesList)
         recycler.adapter = gameAdapter
+        Log.d("MainActivity","Se creo el recyclerView")
     }
 }

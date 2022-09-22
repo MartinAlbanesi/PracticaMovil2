@@ -1,5 +1,6 @@
 package com.practice.practicamovil2.ui.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,7 @@ class GameAdapter(list: List<APIGameModel>): RecyclerView.Adapter<GameAdapter.Vi
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemLayoutView = LayoutInflater.from(parent.context).inflate(R.layout.item_view, parent, false)
+        Log.d("GameAdapter","Entró al onCreateViewHolder() exitosamente")
         return ViewHolder(itemLayoutView)
     }
 
@@ -23,9 +25,11 @@ class GameAdapter(list: List<APIGameModel>): RecyclerView.Adapter<GameAdapter.Vi
         holder.nombre.text =  gameList[position].nombre
         holder.descripcion.text = gameList[position].descripcion
         Glide.with(holder.imagen.context).load(gameList[position].imagen).into(holder.imagen)
+        Log.d("GameAdapter","Entró al onBindViewHolder() exitosamente")
     }
 
     override fun getItemCount(): Int {
+        Log.d("GameAdapter","Entró al getItemCount() exitosamente")
         return gameList.size
     }
 
@@ -37,6 +41,7 @@ class GameAdapter(list: List<APIGameModel>): RecyclerView.Adapter<GameAdapter.Vi
             nombre = itemView.findViewById(R.id.tv_nombre)
             descripcion = itemView.findViewById(R.id.tv_descripcion)
             imagen = itemView.findViewById(R.id.iv_imagen)
+            Log.d("GameAdapter","Se inicializan las vistas del ViewHolder() exitosamente")
         }
     }
 

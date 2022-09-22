@@ -1,5 +1,6 @@
 package com.practice.practicamovil2.data.repositories
 
+import android.util.Log
 import com.practice.practicamovil2.domain.model.APIGameModel
 
 class GameFakeRepository: GameRepository {
@@ -14,6 +15,7 @@ class GameFakeRepository: GameRepository {
     )
 
     override suspend fun listGames(): List<APIGameModel> {
+        Log.d("GameFakeRepository","Entró al método listGames()")
         return games
     }
 

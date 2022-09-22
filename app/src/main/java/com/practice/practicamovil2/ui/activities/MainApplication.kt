@@ -1,6 +1,7 @@
 package com.practice.practicamovil2.ui.activities
 
 import android.app.Application
+import android.util.Log
 import com.practice.practicamovil2.injectDependencies.localRepositoryModule
 import com.practice.practicamovil2.injectDependencies.remoteRepositoryModule
 import org.koin.android.ext.koin.androidContext
@@ -16,6 +17,7 @@ class MainApplication: Application() {
             androidLogger()
             androidContext(this@MainApplication)
             modules(remoteRepositoryModule)
+            Log.d("MainApplication","Se inicializó Koin")
         }
     }
 }
