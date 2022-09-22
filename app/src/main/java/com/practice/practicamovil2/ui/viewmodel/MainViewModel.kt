@@ -7,7 +7,7 @@ import com.practice.practicamovil2.data.GameRepository
 import com.practice.practicamovil2.data.model.GameModel
 
 
-class MainViewModel(private val gameRepository: GameRepository = GameFakeRepository()): ViewModel()  {
+class MainViewModel(private val gameRepository: GameRepository): ViewModel()  {
 
     var gamesList = MutableLiveData(listOf<GameModel>())
 

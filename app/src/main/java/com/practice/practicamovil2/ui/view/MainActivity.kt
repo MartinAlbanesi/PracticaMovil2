@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.practice.practicamovil2.R
 import com.practice.practicamovil2.domain.adapters.GameAdapter
 import com.practice.practicamovil2.ui.viewmodel.MainViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recycler: RecyclerView
     private lateinit var gameAdapter: GameAdapter
     //val firstPresenter: MainApplication by inject()
-    private val vm: MainViewModel by viewModels()
+    private val vm: MainViewModel by viewModel()
 
 
 
