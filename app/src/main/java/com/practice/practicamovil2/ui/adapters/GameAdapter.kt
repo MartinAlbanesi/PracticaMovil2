@@ -8,9 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.practice.practicamovil2.R
-import com.practice.practicamovil2.domain.model.GameModel
+import com.practice.practicamovil2.domain.model.APIGameModel
 
-class GameAdapter(list: List<GameModel>): RecyclerView.Adapter<GameAdapter.ViewHolder>() {
+class GameAdapter(list: List<APIGameModel>): RecyclerView.Adapter<GameAdapter.ViewHolder>() {
 
     private var gameList = list
 
