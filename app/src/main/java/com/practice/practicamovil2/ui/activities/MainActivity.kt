@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.practice.practicamovil2.R
+import com.practice.practicamovil2.domain.model.APIGameModel
 import com.practice.practicamovil2.injectDependencies.remoteRepositoryModule
 import com.practice.practicamovil2.ui.adapters.GameAdapter
 import com.practice.practicamovil2.ui.viewmodels.MainViewModel
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recycler: RecyclerView
     private lateinit var gameAdapter: GameAdapter
     private val vm: MainViewModel by viewModel()
+    lateinit var lista: List<APIGameModel>
     //private lateinit var toast: Toast
 
 /*
@@ -39,6 +41,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //vm.errorMessage.observe(this, errorMessageObserver)
+
+
 
         lifecycleScope.launch {
             vm.fill()

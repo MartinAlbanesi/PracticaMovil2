@@ -22,5 +22,5 @@ val localRepositoryModule = module {
     single<GameRepository> { GameFakeRepository() }
 
     //ViewModel
-    //viewModel { MainViewModel (get()) }
+    viewModel { MainViewModel (get()) }
 }
