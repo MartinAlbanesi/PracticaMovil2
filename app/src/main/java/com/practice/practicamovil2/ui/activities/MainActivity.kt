@@ -34,12 +34,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private val gameListObserver = Observer<List<APIGameModel>> {
+        gameAdapter.notifyDataSetChanged()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         toast = Toast.makeText(applicationContext, "Error", Toast.LENGTH_SHORT)
         setContentView(R.layout.activity_main)
         vm.errorMessage.observe(this, errorMessageObserver)
+        vm.allGamesList.observe(this, gameListObserver)
         lifecycleScope.launch {
             vm.fill()
         }
