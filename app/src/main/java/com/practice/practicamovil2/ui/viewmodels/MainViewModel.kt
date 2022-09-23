@@ -3,24 +3,24 @@ package com.practice.practicamovil2.ui.viewmodels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.practice.practicamovil2.data.api.GameAPIRepository
-import com.practice.practicamovil2.data.repositories.GameRepository
-import com.practice.practicamovil2.domain.model.APIGameModel
+import com.practice.practicamovil2.data.repositories.game.GameRepository
+import com.practice.practicamovil2.data.repositories.game.api.models.APIGameModel
+import com.practice.practicamovil2.ui.components.ErrorMessage
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
 
-class MainViewModel(private val gameList: GameRepository): ViewModel()  {
+class MainViewModel(private val gameList: GameRepository) : ViewModel() {
 
     var allGamesList = listOf<APIGameModel>()
-    var errorMessage = MutableLiveData("Error")
+    var errorMessage = MutableLiveData(ErrorMessage(false, ""))
 
-    suspend fun fill(){
+    suspend fun fill() {
         viewModelScope.launch {
-            try{
+            try {
                 allGamesList = gameList.listGames()
-            }catch (e: Exception){
-                errorMessage.value = e.message
+            } catch (e: Exception) {
+                errorMessage.value = ErrorMessage(true, e.message)
             }
         }
     }

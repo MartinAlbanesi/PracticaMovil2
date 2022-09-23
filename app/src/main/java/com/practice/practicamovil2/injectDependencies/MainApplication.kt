@@ -1,4 +1,4 @@
-package com.practice.practicamovil2.ui.activities
+package com.practice.practicamovil2.injectDependencies
 
 import android.app.Application
 import com.practice.practicamovil2.injectDependencies.localRepositoryModule

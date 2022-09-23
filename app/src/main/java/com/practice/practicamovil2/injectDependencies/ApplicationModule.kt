@@ -1,11 +1,10 @@
 package com.practice.practicamovil2.injectDependencies
 
-import com.practice.practicamovil2.data.api.GameAPIProvider
-import com.practice.practicamovil2.data.api.GameAPIMainProvider
-import com.practice.practicamovil2.data.api.GameAPIRepository
-import com.practice.practicamovil2.data.repositories.GameFakeRepository
-import com.practice.practicamovil2.data.repositories.GameRepository
-import com.practice.practicamovil2.ui.activities.MainActivity
+import com.practice.practicamovil2.data.repositories.game.api.GameAPIProvider
+import com.practice.practicamovil2.data.repositories.game.api.GameAPIMainProvider
+import com.practice.practicamovil2.data.repositories.game.GameAPIRepository
+import com.practice.practicamovil2.data.repositories.game.GameFakeRepository
+import com.practice.practicamovil2.data.repositories.game.GameRepository
 import com.practice.practicamovil2.ui.viewmodels.MainViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module

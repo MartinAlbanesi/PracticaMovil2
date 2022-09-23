@@ -1,4 +1,4 @@
-package com.practice.practicamovil2.domain.model
+package com.practice.practicamovil2.data.repositories.game.api.models
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,6 +1,6 @@
-package com.practice.practicamovil2.data.repositories
+package com.practice.practicamovil2.data.repositories.game
 
-import com.practice.practicamovil2.domain.model.APIGameModel
+import com.practice.practicamovil2.data.repositories.game.api.models.APIGameModel
 
 class GameFakeRepository: GameRepository {
 

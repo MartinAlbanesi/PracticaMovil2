@@ -8,19 +8,20 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.practice.practicamovil2.R
-import com.practice.practicamovil2.domain.model.APIGameModel
+import com.practice.practicamovil2.data.repositories.game.api.models.APIGameModel
 
-class GameAdapter(list: List<APIGameModel>): RecyclerView.Adapter<GameAdapter.ViewHolder>() {
+class GameAdapter(list: List<APIGameModel>) : RecyclerView.Adapter<GameAdapter.ViewHolder>() {
 
     private var gameList = list
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemLayoutView = LayoutInflater.from(parent.context).inflate(R.layout.item_view, parent, false)
+        val itemLayoutView =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_view, parent, false)
         return ViewHolder(itemLayoutView)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.nombre.text =  gameList[position].nombre
+        holder.nombre.text = gameList[position].nombre
         holder.descripcion.text = gameList[position].descripcion
         Glide.with(holder.imagen.context).load(gameList[position].imagen).into(holder.imagen)
     }
@@ -33,7 +34,8 @@ class GameAdapter(list: List<APIGameModel>): RecyclerView.Adapter<GameAdapter.Vi
         var nombre: TextView
         var descripcion: TextView
         var imagen: ImageView
-        init{
+
+        init {
             nombre = itemView.findViewById(R.id.tv_nombre)
             descripcion = itemView.findViewById(R.id.tv_descripcion)
             imagen = itemView.findViewById(R.id.iv_imagen)
